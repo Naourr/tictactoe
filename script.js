@@ -23,6 +23,13 @@ statusDisplay.innerHTML = currentPlayerTurn();
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+document.querySelector('.switch').addEventListener('click', function() {
+    let temp = xtotal;
+    xtotal = ototal;
+    ototal = temp;
+    xscore.innerHTML = xtotal;
+    oscore.innerHTML = ototal;
+});
 
 function handleCellClick(clickedCellEvent) {   
         const clickedCell = clickedCellEvent.target;
