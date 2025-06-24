@@ -16,6 +16,15 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all 0.3s ease;
+}
+.container.red {
+    background-color: pink;
+    transition: all 0.3s ease;
+}
+.container.blue {
+    background-color: powderblue;
+    transition: all 0.3s ease;
 }
 .scores {
     position: fixed;
@@ -28,24 +37,26 @@ html {
 }
 .score {
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
-.grid {
-    width: 280px;
-    height: 280px;
+.game--container {
+    width: 320px;
+    height: 320px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: gray;
     justify-items: center;
     align-items: center;
+    text-align: center;
 }
 .cell {
     font-size: 5rem;
     color: black;
     background-color: white;
-    width: 85px;
-    height: 85px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
+    user-select: none;
 }
 .textbox {
     display: flex;
@@ -55,10 +66,10 @@ html {
     margin-top: 2rem;
     gap: 1rem;
 }
-.textbox h1 {
+.textbox .game--status {
     font-size: 2.5rem;
 }
-.textbox button {
+.textbox .game--restart {
     font-size: 1.5rem;
     padding: 4px 15px;
 }
@@ -77,13 +88,25 @@ html {
     background-color: red;
     transform: rotate(45deg);
     position: fixed;
+    bottom: -200px;
+    left: -200px;
+    transition: all 0.3s ease;
+}
+.left.active {
     bottom: -100px;
     left: -100px;
+    transition: all 0.3s ease;
 }
 .right {
     background-color: blue;
     transform: rotate(-45deg);
     position: fixed;
+    bottom: -200px;
+    right: -200px;
+    transition: all 0.3s ease;
+}
+.right.active {
     bottom: -100px;
     right: -100px;
+    transition: all 0.3s ease;
 }
